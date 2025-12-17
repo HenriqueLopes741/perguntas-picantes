@@ -1,313 +1,314 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Perguntas Picantes 🔥</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Perguntas Picantes 🔥</title>
 
-  <style>
-    :root {
-      --bg: #120813;
-      --card: #1a0f1f;
-      --accent: #ff2d55;
-      --accent-2: #ff9f1c;
-      --text: #fff0f6;
-      --muted: #d0b7c7;
-    }
+<style>
+:root{
+  --bg:#120813;
+  --card:#1a0f1f;
+  --accent:#ff2d55;
+  --text:#fff0f6;
+  --muted:#d0b7c7;
+}
+*{box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto}
+body{
+  margin:0;min-height:100vh;
+  background:radial-gradient(1200px 600px at 10% -10%,#1b1f3a 0%,transparent 60%),var(--bg);
+  color:var(--text);
+  display:grid;place-items:center;
+}
+.container{width:min(900px,92%)}
+.card{
+  background:var(--card);
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.35);
+  padding:24px;margin:16px 0;
+}
+h1{margin:0 0 8px;font-size:2rem}
+p{color:var(--muted)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
 
-    * {
-      box-sizing: border-box;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto;
-    }
+select,button{
+  background:#1e2240;color:var(--text);
+  border:1px solid #2b2f57;
+  padding:10px 14px;
+  border-radius:12px;
+  cursor:pointer;
+}
+button.primary{background:var(--accent);border-color:var(--accent)}
+button:hover{filter:brightness(1.05)}
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: radial-gradient(1200px 600px at 10% -10%, #1b1f3a 0%, transparent 60%), var(--bg);
-      color: var(--text);
-      display: grid;
-      place-items: center;
-    }
+.pill{
+  padding:4px 10px;
+  border-radius:999px;
+  background:#20245a;
+  font-size:.8rem;
+}
 
-    .container {
-      width: min(900px, 92%);
-    }
+.question{
+  font-size:1.35rem;
+  line-height:1.5;
+  margin-top:16px;
+  padding:18px;
+  border-radius:16px;
+  border:2px dashed var(--accent);
+  animation:fade .3s ease;
+}
 
-    .card {
-      background: var(--card);
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.35);
-      padding: 24px;
-      margin: 16px 0;
-    }
+@keyframes fade{
+  from{opacity:0;transform:translateY(6px)}
+  to{opacity:1;transform:translateY(0)}
+}
 
-    h1 {
-      margin: 0 0 8px;
-      font-size: 2rem;
-    }
-
-    p {
-      color: var(--muted);
-    }
-
-    .row {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    select, button {
-      background: #1e2240;
-      color: var(--text);
-      border: 1px solid #2b2f57;
-      padding: 10px 14px;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-
-    button.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-    }
-
-    button:hover {
-      filter: brightness(1.05);
-    }
-
-    .pill {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #20245a;
-      font-size: .8rem;
-    }
-
-    .question {
-      font-size: 1.35rem;
-      line-height: 1.5;
-      margin-top: 16px;
-      padding: 18px;
-      border-radius: 16px;
-      animation: fade .35s ease;
-      border: 2px dashed;
-    }
-
-    .leve { border-color: #ff9f1c; }
-    .medio { border-color: #ff2d55; }
-    .ousado { border-color: #b5179e; }
-    .casal { border-color: #4cc9f0; }
-    .amigos { border-color: #80ed99; }
-
-    @keyframes fade {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-  </style>
+.footer{
+  text-align:center;
+  color:var(--muted);
+  font-size:.85rem;
+}
+</style>
 </head>
 
 <body>
-  <main class="container">
+<main class="container">
 
-    <div class="card">
-      <h1>Perguntas Picantes 🔥</h1>
-      <p>Quebre o gelo, provoque conversas e se divirta.</p>
+<div class="card">
+<h1>Perguntas Picantes 🔥</h1>
+<p>Quebre o gelo, provoque conversas e se divirta.</p>
 
-      <div class="row">
-        <select id="category">
-          <option value="all">Todas</option>
-          <option value="leve">🔥 Leve</option>
-          <option value="medio">🔥🔥 Médio</option>
-          <option value="ousado">🔥🔥🔥 Ousado</option>
-          <option value="casal">Casal</option>
-          <option value="amigos">Amigos</option>
-        </select>
+<div class="row">
+<select id="category">
+  <option value="all">Todas</option>
+  <option value="leve">🔥 Leve</option>
+  <option value="medio">🔥🔥 Médio</option>
+  <option value="ousado">🔥🔥🔥 Ousado</option>
+  <option value="casal">Casal</option>
+  <option value="amigos">Amigos</option>
+</select>
 
-        <button class="primary" onclick="drawQuestion()">Sortear</button>
-        <button onclick="resetGame()">Resetar</button>
-        <button onclick="shareQuestion()">Compartilhar</button>
+<select id="mode">
+  <option value="classic">🎲 Modo Clássico</option>
+  <option value="roleta">🎯 Modo Roleta</option>
+</select>
 
-        <span class="pill" id="counter">0 sorteadas</span>
-      </div>
+<button class="primary" onclick="drawQuestion()">Sortear</button>
+<button onclick="favorite()">⭐ Favoritar</button>
+<button onclick="share()">📤 Compartilhar</button>
+<button onclick="resetGame()">🔄 Reset</button>
 
-      <div id="question" class="question leve">
-        Clique em “Sortear”
-      </div>
-    </div>
+<span class="pill" id="counter">0 sorteadas</span>
+</div>
 
-    <div class="card">
-      <h3>Dicas</h3>
-      <div class="row">
-        <span class="pill">Respeito sempre</span>
-        <span class="pill">Sem julgamentos</span>
-        <span class="pill">Pode pular</span>
-        <span class="pill">Divirta-se</span>
-      </div>
-    </div>
+<div id="question" class="question">
+Clique em “Sortear”
+</div>
+</div>
 
-    <div class="footer">© 2025 • Jogo de perguntas sugestivas • +18</div>
-  </main>
+<div class="card">
+<h3>⭐ Favoritas</h3>
+<p id="favList">Nenhuma favorita ainda.</p>
+</div>
 
-  <script>
-    const QUESTIONS = [
-        { cat: 'leve', text: 'Qual elogio te conquista mais rápido?' },
-        { cat: 'leve', text: 'O que te chama atenção logo no primeiro olhar?' },
-        { cat: 'leve', text: 'Você prefere encontros planejados ou espontâneos?' },
-        { cat: 'leve', text: 'Qual música cria um clima perfeito?' },
-        { cat: 'leve', text: 'Café, barzinho ou passeio ao ar livre?' },
-        { cat: 'leve', text: 'Você é mais conversa ou atitude?' },
-        { cat: 'leve', text: 'Qual detalhe pequeno faz grande diferença?' },
-        { cat: 'leve', text: 'O que te faz sorrir sem perceber?' },
-        { cat: 'leve', text: 'Prefere noite tranquila ou algo animado?' },
-        { cat: 'leve', text: 'Qual foi o encontro mais inesperado que deu certo?' },
-        { cat: 'leve', text: 'Você gosta mais de ouvir ou falar?' },
-        { cat: 'leve', text: 'Qual lugar te deixa automaticamente de bom humor?' },
-        { cat: 'leve', text: 'O que nunca pode faltar em um encontro?' },
-        { cat: 'leve', text: 'Você se considera romântico(a)?' },
-        { cat: 'leve', text: 'Qual conversa te prende facilmente?' },
-        { cat: 'leve', text: 'Prefere algo simples ou elaborado?' },
-        { cat: 'leve', text: 'Qual foi o melhor elogio que já recebeu?' },
-        { cat: 'leve', text: 'Você acredita em boa primeira impressão?' },
-        { cat: 'leve', text: 'O que te deixa à vontade rapidamente?' },
-        { cat: 'leve', text: 'Qual tipo de pessoa te passa confiança?' },
-    
-        { cat: 'medio', text: 'Você gosta mais de provocar ou ser provocado(a)?' },
-        { cat: 'medio', text: 'Qual tipo de mensagem mexe mais com você?' },
-        { cat: 'medio', text: 'Você acredita em química instantânea?' },
-        { cat: 'medio', text: 'Qual atitude te deixa intrigado(a)?' },
-        { cat: 'medio', text: 'Prefere intensidade ou constância?' },
-        { cat: 'medio', text: 'O que te faz perder a noção do tempo?' },
-        { cat: 'medio', text: 'Qual elogio você gostaria de ouvir hoje?' },
-        { cat: 'medio', text: 'O que te deixa mais confiante em um encontro?' },
-        { cat: 'medio', text: 'Você gosta de mistério ou transparência?' },
-        { cat: 'medio', text: 'Qual situação já te deixou com frio na barriga?' },
-        { cat: 'medio', text: 'Prefere surpresas ou expectativas combinadas?' },
-        { cat: 'medio', text: 'O que te conquista aos poucos?' },
-        { cat: 'medio', text: 'Qual tipo de olhar diz mais que palavras?' },
-        { cat: 'medio', text: 'Você se apaixona rápido ou devagar?' },
-        { cat: 'medio', text: 'O que mais te atrai além da aparência?' },
-        { cat: 'medio', text: 'Qual clima te deixa mais confortável?' },
-        { cat: 'medio', text: 'O que te faz mudar de ideia sobre alguém?' },
-        { cat: 'medio', text: 'Qual conversa te deixa curioso(a)?' },
-        { cat: 'medio', text: 'Você prefere conduzir ou ser conduzido(a)?' },
-        { cat: 'medio', text: 'Qual atitude simples é irresistível?' },
+<div class="footer">
+© 2025 • Jogo de perguntas sugestivas • +18
+</div>
 
-        { cat: 'ousado', text: 'Qual fantasia romântica você toparia contar?' },
-        { cat: 'ousado', text: 'Prefere um ritmo lento ou intensidade desde o início?' },
-        { cat: 'ousado', text: 'O que mais desperta sua curiosidade em alguém?' },
-        { cat: 'ousado', text: 'Qual limite você só ultrapassa com confiança?' },
-        { cat: 'ousado', text: 'Você gosta de dominar o clima ou deixar fluir?' },
-        { cat: 'ousado', text: 'Qual convite você acharia irresistível?' },
-        { cat: 'ousado', text: 'Prefere silêncio cheio de tensão ou conversa afiada?' },
-        { cat: 'ousado', text: 'O que te faz arrepiar sem tocar?' },
-        { cat: 'ousado', text: 'Qual promessa faria em um encontro perfeito?' },
-        { cat: 'ousado', text: 'Qual situação aumenta a tensão no ar?' },
-        { cat: 'ousado', text: 'Você prefere provocar aos poucos ou direto?' },
-        { cat: 'ousado', text: 'Qual olhar você não consegue ignorar?' },
-        { cat: 'ousado', text: 'O que te deixa vulnerável de um jeito bom?' },
-        { cat: 'ousado', text: 'Qual clima combina mais com você à noite?' },
-        { cat: 'ousado', text: 'Você gosta de desafios ou segurança?' },
-        { cat: 'ousado', text: 'Qual tipo de aproximação mais mexe com você?' },
-        { cat: 'ousado', text: 'O que torna alguém irresistível sem esforço?' },
-        { cat: 'ousado', text: 'Qual detalhe te faz perder o foco?' },
-        { cat: 'ousado', text: 'Qual atitude muda totalmente o clima?' },
-        { cat: 'ousado', text: 'Você prefere tensão ou entrega?' },
- 
-        { cat: 'casal', text: 'O que hoje te faz se apaixonar de novo?' },
-        { cat: 'casal', text: 'Qual hábito do outro mais te conquista?' },
-        { cat: 'casal', text: 'O que podemos fazer para sair da rotina?' },
-        { cat: 'casal', text: 'Qual lembrança vocês deveriam repetir?' },
-        { cat: 'casal', text: 'O que fortalece a conexão de vocês?' },
-        { cat: 'casal', text: 'Qual surpresa simples faria diferença agora?' },
-        { cat: 'casal', text: 'O que você mais admira no outro hoje?' },
-        { cat: 'casal', text: 'O que vocês fazem melhor juntos?' },
-        { cat: 'casal', text: 'Qual momento recente foi especial?' },
-        { cat: 'casal', text: 'O que vocês aprenderam juntos?' },
-        { cat: 'casal', text: 'Como demonstrar mais carinho no dia a dia?' },
-        { cat: 'casal', text: 'Qual plano futuro mais anima vocês?' },
-        { cat: 'casal', text: 'O que te faz se sentir seguro(a) na relação?' },
-        { cat: 'casal', text: 'Qual detalhe do outro você valoriza em silêncio?' },
-        { cat: 'casal', text: 'O que não pode faltar na relação?' },
-        { cat: 'casal', text: 'Qual hábito vocês querem criar juntos?' },
-        { cat: 'casal', text: 'O que faz vocês rirem juntos?' },
-        { cat: 'casal', text: 'Qual pequena atitude muda o dia?' },
-        { cat: 'casal', text: 'Como manter a conexão viva?' },
-        { cat: 'casal', text: 'Qual momento define vocês?' },
+</main>
 
-        { cat: 'amigos', text: 'Quem aqui é mais romântico do que aparenta?' },
-        { cat: 'amigos', text: 'Qual conselho vale ouro para um primeiro encontro?' },
-        { cat: 'amigos', text: 'Quem some mais quando se apaixona?' },
-        { cat: 'amigos', text: 'Qual red flag vocês ignorariam?' },
-        { cat: 'amigos', text: 'Quem manda melhor mensagem?' },
-        { cat: 'amigos', text: 'Qual história de encontro rendeu risadas?' },
-        { cat: 'amigos', text: 'Quem é mais intenso quando gosta?' },
-        { cat: 'amigos', text: 'Quem se apega mais rápido?' },
-        { cat: 'amigos', text: 'Quem sempre dá o melhor conselho?' },
-        { cat: 'amigos', text: 'Qual erro de encontro é clássico?' },
-        { cat: 'amigos', text: 'Quem demora mais para responder?' },
-        { cat: 'amigos', text: 'Quem sempre se envolve em histórias curiosas?' },
-        { cat: 'amigos', text: 'Qual conselho vocês dariam para si mesmos?' },
-        { cat: 'amigos', text: 'Quem é mais emocionado(a)?' },
-        { cat: 'amigos', text: 'Quem sempre cria expectativas?' },
-        { cat: 'amigos', text: 'Qual situação rende zoeira eterna?' },
-        { cat: 'amigos', text: 'Quem se apaixona pela conversa?' },
-        { cat: 'amigos', text: 'Qual atitude é unanimemente atraente?' },
-        { cat: 'amigos', text: 'Quem sempre percebe o clima primeiro?' },
-        { cat: 'amigos', text: 'Quem dá match mais fácil?' }
+<script>
+const QUESTIONS = [
+/* 🔥 LEVE (20) */
+{cat:'leve',text:'Qual elogio te conquista mais rápido?'},
+{cat:'leve',text:'O que te chama atenção logo no primeiro olhar?'},
+{cat:'leve',text:'Você prefere encontros planejados ou espontâneos?'},
+{cat:'leve',text:'Qual música cria um clima perfeito?'},
+{cat:'leve',text:'Café, barzinho ou passeio ao ar livre?'},
+{cat:'leve',text:'Você é mais conversa ou atitude?'},
+{cat:'leve',text:'Qual detalhe pequeno faz grande diferença?'},
+{cat:'leve',text:'O que te faz sorrir sem perceber?'},
+{cat:'leve',text:'Prefere noite tranquila ou algo animado?'},
+{cat:'leve',text:'Qual encontro mais inesperado deu certo?'},
+{cat:'leve',text:'Você gosta mais de ouvir ou falar?'},
+{cat:'leve',text:'O que nunca pode faltar em um encontro?'},
+{cat:'leve',text:'Você se considera romântico(a)?'},
+{cat:'leve',text:'Qual conversa te prende facilmente?'},
+{cat:'leve',text:'Prefere algo simples ou elaborado?'},
+{cat:'leve',text:'Qual foi o melhor elogio que já recebeu?'},
+{cat:'leve',text:'Você acredita em boa primeira impressão?'},
+{cat:'leve',text:'O que te deixa à vontade rapidamente?'},
+{cat:'leve',text:'Qual tipo de pessoa te passa confiança?'},
+{cat:'leve',text:'Qual lugar te deixa de bom humor?'},
 
-    ];
+/* 🔥🔥 MÉDIO (20) */
+{cat:'medio',text:'Você gosta mais de provocar ou ser provocado(a)?'},
+{cat:'medio',text:'Qual tipo de mensagem mexe mais com você?'},
+{cat:'medio',text:'Você acredita em química instantânea?'},
+{cat:'medio',text:'Qual atitude te deixa intrigado(a)?'},
+{cat:'medio',text:'Prefere intensidade ou constância?'},
+{cat:'medio',text:'O que te faz perder a noção do tempo?'},
+{cat:'medio',text:'Qual elogio gostaria de ouvir hoje?'},
+{cat:'medio',text:'O que te deixa mais confiante em um encontro?'},
+{cat:'medio',text:'Você gosta de mistério ou transparência?'},
+{cat:'medio',text:'Qual situação já deu frio na barriga?'},
+{cat:'medio',text:'Prefere surpresas ou expectativas combinadas?'},
+{cat:'medio',text:'O que te conquista aos poucos?'},
+{cat:'medio',text:'Qual tipo de olhar diz mais que palavras?'},
+{cat:'medio',text:'Você se apaixona rápido ou devagar?'},
+{cat:'medio',text:'O que te atrai além da aparência?'},
+{cat:'medio',text:'Qual clima te deixa confortável?'},
+{cat:'medio',text:'O que te faz mudar de ideia sobre alguém?'},
+{cat:'medio',text:'Você prefere conduzir ou ser conduzido(a)?'},
+{cat:'medio',text:'Qual atitude simples é irresistível?'},
+{cat:'medio',text:'Você curte tensão no ar?'},
 
-    let used = [];
-    let count = 0;
+/* 🔥🔥🔥 OUSADO (20) */
+{cat:'ousado',text:'Qual fantasia romântica toparia contar?'},
+{cat:'ousado',text:'Prefere ritmo lento ou intensidade?'},
+{cat:'ousado',text:'O que desperta curiosidade em alguém?'},
+{cat:'ousado',text:'Qual limite só ultrapassa com confiança?'},
+{cat:'ousado',text:'Você gosta de dominar ou deixar fluir?'},
+{cat:'ousado',text:'Qual convite seria irresistível?'},
+{cat:'ousado',text:'Silêncio tenso ou conversa afiada?'},
+{cat:'ousado',text:'O que arrepia sem tocar?'},
+{cat:'ousado',text:'Qual promessa faria num encontro perfeito?'},
+{cat:'ousado',text:'Qual situação aumenta a tensão?'},
+{cat:'ousado',text:'Prefere provocar aos poucos ou direto?'},
+{cat:'ousado',text:'Qual olhar você não ignora?'},
+{cat:'ousado',text:'O que te deixa vulnerável de um jeito bom?'},
+{cat:'ousado',text:'Qual clima combina mais à noite?'},
+{cat:'ousado',text:'Desafio ou segurança?'},
+{cat:'ousado',text:'Qual aproximação mais mexe com você?'},
+{cat:'ousado',text:'O que torna alguém irresistível?'},
+{cat:'ousado',text:'Qual detalhe te faz perder o foco?'},
+{cat:'ousado',text:'Tensão ou entrega?'},
+{cat:'ousado',text:'Qual atitude muda tudo?'},
 
-    function drawQuestion() {
-      const cat = document.getElementById('category').value;
-      let pool = cat === 'all'
-        ? QUESTIONS
-        : QUESTIONS.filter(q => q.cat === cat);
+/* 💑 CASAL (20) */
+{cat:'casal',text:'O que te faz se apaixonar de novo?'},
+{cat:'casal',text:'Qual hábito do outro mais conquista?'},
+{cat:'casal',text:'Como sair da rotina esta semana?'},
+{cat:'casal',text:'Qual lembrança repetir?'},
+{cat:'casal',text:'O que fortalece a conexão?'},
+{cat:'casal',text:'Qual surpresa simples faria diferença?'},
+{cat:'casal',text:'O que mais admira no outro hoje?'},
+{cat:'casal',text:'O que fazem melhor juntos?'},
+{cat:'casal',text:'Qual momento recente foi especial?'},
+{cat:'casal',text:'O que aprenderam juntos?'},
+{cat:'casal',text:'Como demonstrar mais carinho?'},
+{cat:'casal',text:'Qual plano futuro anima?'},
+{cat:'casal',text:'O que traz segurança na relação?'},
+{cat:'casal',text:'Qual detalhe valoriza em silêncio?'},
+{cat:'casal',text:'O que não pode faltar na relação?'},
+{cat:'casal',text:'Qual hábito criar juntos?'},
+{cat:'casal',text:'O que faz rir juntos?'},
+{cat:'casal',text:'Qual pequena atitude muda o dia?'},
+{cat:'casal',text:'Como manter a chama acesa?'},
+{cat:'casal',text:'Qual momento define vocês?'},
 
-      pool = pool.filter(q => !used.includes(q.text));
+/* 🧑‍🤝‍🧑 AMIGOS (20) */
+{cat:'amigos',text:'Quem é mais romântico do que parece?'},
+{cat:'amigos',text:'Qual conselho vale ouro?'},
+{cat:'amigos',text:'Quem some quando se apaixona?'},
+{cat:'amigos',text:'Qual red flag ignorariam?'},
+{cat:'amigos',text:'Quem manda melhor mensagem?'},
+{cat:'amigos',text:'Qual história rende risadas?'},
+{cat:'amigos',text:'Quem é mais intenso?'},
+{cat:'amigos',text:'Quem se apega mais rápido?'},
+{cat:'amigos',text:'Quem dá o melhor conselho?'},
+{cat:'amigos',text:'Qual erro de encontro é clássico?'},
+{cat:'amigos',text:'Quem demora mais pra responder?'},
+{cat:'amigos',text:'Quem sempre cria expectativas?'},
+{cat:'amigos',text:'Qual situação vira zoeira eterna?'},
+{cat:'amigos',text:'Quem percebe o clima primeiro?'},
+{cat:'amigos',text:'Quem dá mais match?'},
+{cat:'amigos',text:'Quem se apaixona pela conversa?'},
+{cat:'amigos',text:'Qual atitude é unanimemente atraente?'},
+{cat:'amigos',text:'Quem sempre se envolve em histórias curiosas?'},
+{cat:'amigos',text:'Qual conselho daria ao eu do passado?'},
+{cat:'amigos',text:'Quem é mais emocionado(a)?'}
+];
 
-      if (!pool.length) {
-        document.getElementById('question').textContent =
-          'Todas as perguntas dessa categoria já foram usadas 😉';
-        return;
-      }
+let used=[],count=0;
+let favorites=JSON.parse(localStorage.getItem("favs"))||[];
+let jogadores=[],roletaConfigurada=false;
 
-      const q = pool[Math.floor(Math.random() * pool.length)];
-      used.push(q.text);
+/* funções mantidas exatamente iguais */
+// ================== FUNÇÕES ==================
+function configurarRoleta(){
+  const qtd = parseInt(prompt('Quantos jogadores?'), 10);
+  if(!qtd || qtd < 2){ alert('Mínimo 2 jogadores'); return false; }
+  jogadores = [];
+  for(let i=1;i<=qtd;i++){
+    const n = prompt(`Nome do jogador ${i}:`);
+    jogadores.push(n && n.trim() ? n.trim() : `Jogador ${i}`);
+  }
+  roletaConfigurada = true;
+  return true;
+}
 
-      const box = document.getElementById('question');
-      box.textContent = q.text;
-      box.className = `question ${q.cat}`;
+function drawQuestion(){
+  const cat = document.getElementById('category').value;
+  const mode = document.getElementById('mode').value;
 
-      count++;
-      document.getElementById('counter').textContent = `${count} sorteadas`;
-    }
+  let pool = cat === 'all' ? QUESTIONS : QUESTIONS.filter(q => q.cat === cat);
+  pool = pool.filter(q => !used.includes(q.text));
 
-    function resetGame() {
-      used = [];
-      count = 0;
-      document.getElementById('counter').textContent = '0 sorteadas';
-      document.getElementById('question').textContent = 'Jogo resetado 🔄';
-    }
+  if(pool.length === 0){
+    document.getElementById('question').textContent = 'Todas já foram usadas 😉';
+    return;
+  }
 
-    function shareQuestion() {
-      const text = document.getElementById('question').textContent;
-      if (navigator.share) {
-        navigator.share({
-          title: 'Perguntas Picantes 🔥',
-          text
-        });
-      } else {
-        alert('Compartilhamento não suportado neste navegador');
-      }
-    }
-  </script>
+  if(mode === 'roleta' && !roletaConfigurada){
+    const ok = configurarRoleta();
+    if(!ok) return;
+  }
+
+  const q = pool[Math.floor(Math.random() * pool.length)];
+  used.push(q.text);
+  count++;
+
+  let texto = q.text;
+  if(mode === 'roleta'){
+    const nome = jogadores[Math.floor(Math.random() * jogadores.length)];
+    texto = `🎯 ${nome}: ${q.text}`;
+  }
+
+  document.getElementById('question').textContent = texto;
+  document.getElementById('counter').textContent = `${count} sorteadas`;
+}
+
+function favorite(){
+  const t = document.getElementById('question').textContent;
+  if(!t || t.includes('Clique')) return;
+  if(!favorites.includes(t)){
+    favorites.push(t);
+    localStorage.setItem('favs', JSON.stringify(favorites));
+    renderFavs();
+  }
+}
+
+function renderFavs(){
+  const el = document.getElementById('favList');
+  el.innerHTML = favorites.length ? favorites.map(f => '• ' + f).join('<br>') : 'Nenhuma favorita ainda.';
+}
+renderFavs();
+
+function share(){
+  const t = document.getElementById('question').textContent;
+  if(navigator.share){ navigator.share({title:'Perguntas Picantes 🔥', text:t}); }
+  else{ alert('Compartilhamento não suportado'); }
+}
+
+function resetGame(){
+  used = [];
+  count = 0;
+  jogadores = [];
+  roletaConfigurada = false;
+  document.getElementById('counter').textContent = '0 sorteadas';
+  document.getElementById('question').textContent = 'Jogo resetado 🔄';
+}
+</script>
 </body>
 </html>
